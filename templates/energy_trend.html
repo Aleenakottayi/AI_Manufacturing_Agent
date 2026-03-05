@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Energy Trend</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body {background:#0f172a;color:white;text-align:center;}
+canvas {max-width:700px; margin:50px auto;}
+</style>
+</head>
+<body>
+
+<h2>Energy Consumption Trend</h2>
+
+<canvas id="energyChart"></canvas>
+
+<script>
+const ctx = document.getElementById('energyChart');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Batch 1','Batch 2','Batch 3','Batch 4','Batch 5'],
+        datasets: [{
+            label: 'Energy (kWh)',
+            data: [900, 1000, 1100, 1050, 1200],
+            borderColor: '#38bdf8',
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: false
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
